@@ -15,7 +15,7 @@ class ApiLikes extends ApiBase
     protected function getAllowedParams()
     {
         return array(
-            'pageName' => null,
+            'pageId' => null,
             'userId' => null,
         );
     }
@@ -28,14 +28,12 @@ class ApiLikes extends ApiBase
     public function execute()
     {
         wfSetupSession();
-        $pageName = $userId = null;
+        $pageId = $userId = null;
         extract($this->extractRequestParams());
 
-        if (!$pageName or !$userId) {
+        if (!$pageId or !$userId) {
             $this->getResult()->addValue(null, 'error', 'Variables is not defined.');
         }
-
-        $pageId = RequestContext::getMain()->getTitle()->newFromDBkey($pageName)->getArticleID();
 
         $dbr = wfGetDB(DB_SLAVE);
         $res = $dbr->select(

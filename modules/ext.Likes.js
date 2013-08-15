@@ -10,14 +10,14 @@
     var Likes = {
         load: function () {
             var actionURL = wgServer + wgScriptPath + '/api.php?action=likes&format=json';
-            var dataString = 'pageName=' + wgTitle + '&userId=' + $('#ext-Likes-userId').val();
+            var dataString = 'pageId=' + $('#ext-Likes-pageId').val() + '&userId=' + $('#ext-Likes-userId').val();
 
             $('body').css('cursor', 'busy');
 
             $.ajax({
                 type: 'POST',
                 url: actionURL,
-                dataType: 'text',
+                dataType: 'json',
                 data: dataString,
                 success: function (data) {
                     var isLiked = parseInt($('#ext-Likes-isLiked').val()),
@@ -47,6 +47,7 @@
     $(function ($) {
         $('.likes a').click(function () {
             Likes.load();
+            return false;
         });
     });
 

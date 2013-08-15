@@ -157,6 +157,7 @@ class Likes
                 __METHOD__
             );
 
+
             if (empty($res) or $res->numRows() == 0) {
                 return 0;
             }
@@ -185,6 +186,7 @@ class Likes
             <div class="likes">
                 <a href="#" title="$title"><img src="$image"></a>
                 <span>{$this->getLikes()}</span>
+                <input id="ext-Likes-pageId" type="hidden" value="{$this->page->getId()}">
                 <input id="ext-Likes-userId" type="hidden" value="{$this->user->getId()}">
                 <input id="ext-Likes-isLiked" type="hidden" value="{$this->isLiked}">
             </div>
