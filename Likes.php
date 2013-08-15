@@ -157,7 +157,6 @@ class Likes
                 __METHOD__
             );
 
-
             if (empty($res) or $res->numRows() == 0) {
                 return 0;
             }
@@ -181,15 +180,17 @@ class Likes
             wfMessage(strtolower(__CLASS__) . '-button-title-add')->inContentLanguage()->plain();
 
         $image = "/extensions/Likes/resources/FB-ThumbsUp_29.png";
+        $css = $this->isLiked ? 'class="reflection"' : '';
 
         return <<<HTML
             <div class="likes">
-                <a href="#" title="$title"><img src="$image"></a>
+                <a href="#" title="$title"><img src="$image" $css></a>
                 <span>{$this->getLikes()}</span>
                 <input id="ext-Likes-pageId" type="hidden" value="{$this->page->getId()}">
                 <input id="ext-Likes-userId" type="hidden" value="{$this->user->getId()}">
                 <input id="ext-Likes-isLiked" type="hidden" value="{$this->isLiked}">
             </div>
+            <div style="clear:both"></div>
 HTML;
     }
 }

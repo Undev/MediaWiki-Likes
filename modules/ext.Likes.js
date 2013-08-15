@@ -26,9 +26,11 @@
                     if (isLiked) {
                         $('#ext-Likes-isLiked').val(0);
                         count--;
+                        $('.likes img').removeClass('reflection');
                     } else {
                         $('#ext-Likes-isLiked').val(1)
                         count++;
+                        $('.likes img').addClass('reflection');
                     }
 
                     $('.likes span').text(count);
@@ -49,6 +51,13 @@
             Likes.load();
             return false;
         });
+
+        $('.likes a').hover(function() {
+            $(this).find('img').fadeTo(200, 0.75);
+        }, function() {
+            $(this).find('img').fadeTo(200, 1);
+        });
+
     });
 
 })(jQuery, mediaWiki);
