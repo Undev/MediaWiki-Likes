@@ -6,9 +6,9 @@
  */
 
 .likes {
-    position: absolute !important;
+    position: absolute;
     top: -25px;
-    right: 10px;
+    right: 65px;
 }
 
 .likes img {

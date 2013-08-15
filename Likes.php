@@ -190,7 +190,6 @@ class Likes
                 <input id="ext-Likes-userId" type="hidden" value="{$this->user->getId()}">
                 <input id="ext-Likes-isLiked" type="hidden" value="{$this->isLiked}">
             </div>
-            <div style="clear:both"></div>
 HTML;
     }
 }
