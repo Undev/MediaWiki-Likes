@@ -4,10 +4,11 @@
  * Date: 12.08.13
  * Time: 13:25
  */
+
 .likes {
-    text-align: right;
-    position: relative;
-    top: -40px;
+    position: absolute !important;
+    top: -25px;
+    right: 10px;
 }
 
 .likes img {

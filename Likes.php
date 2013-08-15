@@ -109,7 +109,7 @@ class Likes
             $count = $this->getLikes();
             $html = $this->getLikeButton($count, true);
 
-            $out->addSubtitle($html);
+            $out->addHTML($html);
         }
 
         return true;
