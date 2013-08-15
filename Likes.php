@@ -158,7 +158,7 @@ class Likes
             );
 
             if (empty($res) or $res->numRows() == 0) {
-                return false;
+                return 0;
             }
 
             foreach ($res as $row) {
@@ -175,10 +175,6 @@ class Likes
 
     private function getLikeButton()
     {
-        $text = $this->isLiked ?
-            wfMessage(strtolower(__CLASS__) . '-button-text-remove')->inContentLanguage()->plain() :
-            wfMessage(strtolower(__CLASS__) . '-button-text-add')->inContentLanguage()->plain();
-
         $title = $this->isLiked ?
             wfMessage(strtolower(__CLASS__) . '-button-title-remove')->inContentLanguage()->plain() :
             wfMessage(strtolower(__CLASS__) . '-button-title-add')->inContentLanguage()->plain();

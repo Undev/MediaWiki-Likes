@@ -45,7 +45,6 @@
     };
 
     $(function ($) {
-        console.log('Debug');
         $('.likes a').click(function () {
             Likes.load();
         });
