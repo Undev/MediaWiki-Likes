@@ -5,13 +5,13 @@
  * Time: 13:25
  */
 
-.mw-content-ltr {
+.mw-body {
     position: relative;
 }
 
 .likes {
     position: absolute;
-    top: -44px;
+    top: -32px;
     right: 65px;
 }
 
