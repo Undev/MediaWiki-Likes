@@ -39,7 +39,7 @@
                     if (typeof console != 'undefined') {
                     }
                 },
-                complete: function(){
+                complete: function () {
                     $('body').css('cursor', 'default');
                 }
             });
@@ -52,12 +52,21 @@
             return false;
         });
 
-        $('.likes a').hover(function() {
+        $('.likes a').hover(function () {
             $(this).find('img').fadeTo(200, 0.75);
-        }, function() {
+        }, function () {
             $(this).find('img').fadeTo(200, 1);
         });
 
+        if (location.href.indexOf('edit') == -1 &&  // не показывать поле на странице редактирования
+            location.href.indexOf('submit') == -1) {
+            if ($('#link-to-self').length != 0) {
+                $('.likes').insertAfter('#link-to-self');
+            } else {
+                $('.likes').appendTo('#firstHeading');
+            }
+
+        }
     });
 
 })(jQuery, mediaWiki);

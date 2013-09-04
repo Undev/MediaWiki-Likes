@@ -5,14 +5,14 @@
  * Time: 13:25
  */
 
-.mw-body {
-    position: relative;
+.likes {
+    display: inline;
+    margin-left: 20px;
 }
 
-.likes {
-    position: absolute;
-    top: -32px;
-    right: 65px;
+.likes span {
+    font-size: 12px;
+    font-weight: normal;
 }
 
 .likes img {
