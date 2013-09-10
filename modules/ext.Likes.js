@@ -21,19 +21,19 @@
                 data: dataString,
                 success: function (data) {
                     var isLiked = parseInt($('#ext-Likes-isLiked').val()),
-                        count = parseInt($('.likes span').text());
+                        count = parseInt($('#likes span').text());
 
                     if (isLiked) {
                         $('#ext-Likes-isLiked').val(0);
                         count--;
-                        $('.likes img').removeClass('reflection');
+                        $('#likes img').removeClass('reflection');
                     } else {
                         $('#ext-Likes-isLiked').val(1)
                         count++;
-                        $('.likes img').addClass('reflection');
+                        $('#likes img').addClass('reflection');
                     }
 
-                    $('.likes span').text(count);
+                    $('#likes span').text(count);
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     if (typeof console != 'undefined') {
@@ -47,12 +47,12 @@
     };
 
     $(function ($) {
-        $('.likes a').click(function () {
+        $('#likes a').click(function () {
             Likes.load();
             return false;
         });
 
-        $('.likes a').hover(function () {
+        $('#likes a').hover(function () {
             $(this).find('img').fadeTo(200, 0.75);
         }, function () {
             $(this).find('img').fadeTo(200, 1);
@@ -60,12 +60,9 @@
 
         if (location.href.indexOf('edit') == -1 &&  // не показывать поле на странице редактирования
             location.href.indexOf('submit') == -1) {
-            if ($('#link-to-self').length != 0) {
-                $('.likes').insertAfter('#link-to-self');
-            } else {
-                $('.likes').appendTo('#firstHeading');
+            if ($('#likes').length != 0) {
+                $('#likes').appendTo('#firstHeading');
             }
-
         }
     });
 

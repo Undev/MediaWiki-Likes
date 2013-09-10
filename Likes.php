@@ -183,7 +183,7 @@ class Likes
         $css = $this->isLiked ? 'class="reflection"' : '';
 
         return <<<HTML
-            <div class="likes">
+            <div id="likes">
                 <a href="#" title="$title"><img src="$image" $css></a>
                 <span>{$this->getLikes()}</span>
                 <input id="ext-Likes-pageId" type="hidden" value="{$this->page->getId()}">

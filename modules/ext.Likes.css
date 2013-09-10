@@ -5,17 +5,17 @@
  * Time: 13:25
  */
 
-.likes {
+#likes {
     display: inline;
     margin-left: 20px;
 }
 
-.likes span {
+#likes span {
     font-size: 12px;
     font-weight: normal;
 }
 
-.likes img {
+#likes img {
     height: 16px;
 }
 
