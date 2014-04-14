@@ -1,7 +1,5 @@
 <?php
 /**
- * Author: Denisov Denis
- * Email: denisovdenis@me.com
  * Date: 12.08.13
  * Time: 13:25
  */
